@@ -29,7 +29,7 @@ public class Account {
    public Account(int id,double balance) {
     this.id = id;
     this.balance = balance;
-    dateCreated = new Date();
+    dateCreated = new Date();  //Creating a Date when account is created
 }
    
    //Accessors and Mutators for the account data
@@ -45,16 +45,16 @@ public class Account {
        return balance;
    }
    
-   public void setBalance(double mybalance){
-       balance = mybalance;
+   public void setBalance(double newbalance){
+       balance = newbalance;
    }
    
    public double getAnnualInterestRate(){
        return annualInterestRate;
    }
    
-   public void setAnnualInterestRate(double myannualInterestRate){
-       annualInterestRate = myannualInterestRate;
+   public void setAnnualInterestRate(double newannualInterestRate){
+       annualInterestRate = newannualInterestRate;
    }
    
    public Date getDateCreated(){
@@ -83,11 +83,11 @@ public class Account {
    
    //The ToString method to display individual account details
    
-   NumberFormat mon = NumberFormat.getCurrencyInstance();
+   NumberFormat money = NumberFormat.getCurrencyInstance();
    
    @Override
    public String toString(){
-       return "Account ID: " + id + "\n" + "Account Balance: " + mon.format(balance) + "\n" + "Interest Rate: " + annualInterestRate + "%" + "\n" + "Date Opened: " + dateCreated;
+       return "Account ID: " + id + "\n" + "Account Balance: " + money.format(balance) + "\n" + "Interest Rate: " + annualInterestRate + "%" + "\n" + "Date Opened: " + dateCreated;
        
    }
    
